@@ -1,0 +1,82 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}{\f1 Times New Roman;}}
+\fs24
+
+\b\fs32 Enterprise Network Design & Configuration Project\fs24\b0\line
+Author: Ayan Dhokle\line
+Certification: CompTIA Network+\line
+Platform: Cisco Packet Tracer\line
+Date: 2025\line
+\line
+
+\b 1. Project Objective\b0\line
+Design and implement an enterprise LAN including VLANs, Inter-VLAN routing, DHCP, ACLs, and troubleshooting.\line
+\line
+
+\b 2. Network Topology\b0\line
+Components:\line
+- Router (R1)\line
+- Switch (S1)\line
+- VLANs for HR, IT, Sales, Guest\line
+- DHCP, ACLs\line
+(Insert topology screenshot here)\line
+\line
+
+\b 3. VLAN Table\b0\line
+VLAN 10 - HR - 192.168.10.0/27 - Gateway 192.168.10.1 - DHCP 192.168.10.6–30\line
+VLAN 20 - IT - 192.168.10.32/27 - Gateway 192.168.10.33 - DHCP 192.168.10.38–62\line
+VLAN 30 - Sales - 192.168.10.64/27 - Gateway 192.168.10.65 - DHCP 192.168.10.70–94\line
+VLAN 40 - Guest - 192.168.10.128/27 - Gateway 192.168.10.129 - DHCP 192.168.10.134–158\line
+\line
+
+\b 4. Switch Configuration Summary\b0\line
+VLAN creation:\line
+vlan 10 / vlan 20 / vlan 30 / vlan 40\line
+\line
+Access Ports:\line
+fa0/1-4 → VLAN10\line
+fa0/5-8 → VLAN20\line
+fa0/9-12 → VLAN30\line
+fa0/13-16 → VLAN40\line
+\line
+Trunk Port:\line
+fa0/24 as trunk\line
+\line
+
+\b 5. Router Configuration Summary (Router-on-a-Stick)\b0\line
+Subinterfaces:\line
+G0/0.10 → 192.168.10.1\line
+G0/0.20 → 192.168.10.33\line
+G0/0.30 → 192.168.10.65\line
+G0/0.40 → 192.168.10.129\line
+\line
+
+\b 6. DHCP Configuration\b0\line
+Pools for each VLAN:\line
+HR, IT, Sales, Guest with proper gateways and subnets.\line
+\line
+
+\b 7. ACL Configuration\b0\line
+ACL 100 (Guest blocked from internal)\line
+ACL 110 (Sales blocked from HR)\line
+Applied inbound on subinterfaces.\line
+\line
+
+\b 8. Testing & Verification\b0\line
+HR ↔ IT: Allowed\line
+Sales → HR: Blocked\line
+Guest → Internal: Blocked\line
+DHCP for all VLANs: Working\line
+\line
+
+\b 9. Troubleshooting Performed\b0\line
+- Corrected DHCP ranges\line
+- Resolved VLAN appearance confusion on router\line
+- Fixed DHCP failure on Sales & Guest\line
+- Correct ACL placement\line
+\line
+
+\b 10. Learning Outcome\b0\line
+This project demonstrates VLAN segmentation, routing, DHCP, ACL security, and real troubleshooting skills.\line
+
+}
