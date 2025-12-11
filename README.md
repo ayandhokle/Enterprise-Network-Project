@@ -1,4 +1,4 @@
-# Network+ Enterprise Networking Project
+# Enterprise Network Simulation- Cisco PAcket Tracer
 Author: Ayan Dhokle
 
 This project demonstrates a full enterprise-level network setup in Cisco Packet Tracer including:
